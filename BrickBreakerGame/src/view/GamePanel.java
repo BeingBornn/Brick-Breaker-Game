@@ -30,15 +30,15 @@ public class GamePanel extends JPanel {
 	// ball attributes
 	private Ball ball;
 	int ballY;
-	int speedX = 4;
-	int speedY = -4;
+	int speedX = 6;
+	int speedY = -6;
 	int ballCenterX = (GameView.SCREEN_WIDTH - Ball.BALL_SIZE)/2;
 
 	// Bricks attribute
 	private BrickManager brickManager;
 	int startY = hudHeight + 50;
-	int cols = 1;
-	int rows = 1;
+	int cols = 10;
+	int rows = 5;
 	
 	
 	//BrickGrid
@@ -60,7 +60,7 @@ public class GamePanel extends JPanel {
 		setFocusable(true);
 
 		//paddle object
-		paddle = new Paddle(PaddleCenterX, paddleSpeedX, paddleWidth, paddleHeight, this);
+		paddle = new Paddle(PaddleCenterX, paddleSpeedX, paddleWidth, paddleHeight, this, null);
 		addKeyListener(new InputHandler(paddle)); //adding InputHandlers for paddle
 		
 		//ball object
@@ -78,6 +78,7 @@ public class GamePanel extends JPanel {
 		
 		// Game Controller
 		gameController = new GameController(ball, this, paddle); // this = the current object that I'm inside
+		paddle.setController(gameController);
 	}
 	
 	@Override

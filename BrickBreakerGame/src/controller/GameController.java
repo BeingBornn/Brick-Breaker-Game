@@ -23,6 +23,7 @@ public class GameController  {
 	private int lives; 
 	private int score;
 	private int level;
+	private boolean ballAttachedToPaddle = true;
 	
 	public GameController(Ball ball, GamePanel panel, Paddle paddle) {
 		this.ball = ball;
@@ -39,19 +40,28 @@ public class GameController  {
 		int delay = 10; // miliseconds
 		ActionListener taskPerformer = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				ball.move();
+				if(ballAttachedToPaddle) {
+					ball.setX(paddle.getX() + paddle.getWidth() / 2 - Ball.BALL_SIZE / 2);
+					ball.setY(paddle.getY() - Ball.BALL_SIZE);
+				} else {
+					ball.move();
+				}
+				
 				// check if the ball fell below the screen
 				if(ball.getY() > panel.getHeight()) {
 					loseLife();
 					return;
 				}
+				
 				paddle.move();
 				bounce();
 				paddleBounce();
 				collisionController.brickBreaker();
+				
 				if (allBricksBroken()) {
 				    nextLevel();
 				}
+				
 				panel.repaint();
 			}
 		};
@@ -141,12 +151,31 @@ public class GameController  {
 	// excuting the next level
 	private void nextLevel() {
 		level++;
-		ball.setSpeedX(ball.getSpeedX() * 1.3);
-		ball.setSpeedY(ball.getSpeedY() * 1.3);
-		 
-		// Reset bricks
-		panel.getBrickManager().brickGridCreator(80, 25, 10, 50, 50); // or whatever sizes you want
-		 
+
+	    // Increase speed but limit maximum
+	    double newSpeedX = ball.getSpeedX() * 1.3;
+	    double newSpeedY = ball.getSpeedY() * 1.3;
+	    
+	    if (Math.abs(newSpeedX) > 20) newSpeedX = Math.signum(newSpeedX) * 20;
+	    if (Math.abs(newSpeedY) > 20) newSpeedY = Math.signum(newSpeedY) * 20;
+	    
+	    ball.setSpeedX(newSpeedX);
+	    ball.setSpeedY(newSpeedY);
+
+	    panel.getBrickManager().brickGridCreator(80, 25, 10, 50, 50);
+	    ballAttachedToPaddle = true;
+	    
+	}
+	
+	// releasing the ball from the paddle
+	public void releaseBall() {
+		if(ballAttachedToPaddle) {
+			ballAttachedToPaddle = false;
+			ball.setSpeedX(level);
+			double speed = Math.sqrt(ball.getSpeedX() * ball.getSpeedX() + ball.getSpeedY() * ball.getSpeedY());
+			ball.setSpeedX(0);   // start straight up
+	        ball.setSpeedY(-speed); // use current speed, only change direction
+		}
 	}
 	
 	// Getters and Setters

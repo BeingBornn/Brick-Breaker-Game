@@ -2,23 +2,26 @@ package model;
 
 import java.awt.Panel;
 
+import controller.GameController;
 import view.GamePanel;
 
 public class Paddle {
 
 	//attributes
-	private final int baseSpeed = 10;
+	private final int baseSpeed = 13;
 	private final int y = 680;
 	private int x, speedX, width, height;
 	GamePanel panel;
+	private GameController controller;
 
 	//Constructor
-	public Paddle(int x, int speedX, int width, int height, GamePanel panel) {
+	public Paddle(int x, int speedX, int width, int height, GamePanel panel, GameController controller) {
 		this.x = x;
 		this.speedX = 0;
 		this.width = width;
 		this.height = height;
 		this.panel = panel;
+		this.controller = controller;
 	}
 
 	//method for paddle movement
@@ -54,6 +57,14 @@ public class Paddle {
 	}
 	
 	// getters and setters
+	public GameController getController() {
+	    return controller;
+	}
+	
+	public void setController(GameController controller) {
+	    this.controller = controller;
+	}
+	
 	public int getX() {
 		return x;
 	}

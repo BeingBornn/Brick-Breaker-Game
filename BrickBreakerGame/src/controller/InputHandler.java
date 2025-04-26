@@ -22,6 +22,9 @@ public class InputHandler extends KeyAdapter {
 		if(key == KeyEvent.VK_RIGHT) {
 			paddle.moveRight();
 		}
+		if(key == KeyEvent.VK_UP) {
+			paddle.getController().releaseBall();
+		}
 	}
 	
 	@Override
