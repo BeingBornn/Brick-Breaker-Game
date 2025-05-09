@@ -118,6 +118,7 @@ public class GameController  {
 		if(lives > 0) {
 			// Reset ball position
 			ball.reset(panel.getWidth(), panel.getHeight());
+			ballAttachedToPaddle = true;
 		} else {
 			// no lives => game over
 			gameOver();

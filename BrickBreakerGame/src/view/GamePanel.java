@@ -30,8 +30,8 @@ public class GamePanel extends JPanel {
 	// ball attributes
 	private Ball ball;
 	int ballY;
-	int speedX = 6;
-	int speedY = -6;
+	int speedX = 4;
+	int speedY = -4;
 	int ballCenterX = (GameView.SCREEN_WIDTH - Ball.BALL_SIZE)/2;
 
 	// Bricks attribute
