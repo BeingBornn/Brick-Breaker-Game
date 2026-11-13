@@ -1,54 +1,60 @@
-# Brick Breaker Game 🎮
+# Brick Breaker Game
 
-A simple and fun Brick Breaker game built with Java!  
-This project is perfect for beginners who want to practice **Java**, **game development**, and **basic animation techniques**.
+A desktop Brick Breaker game built with **Java Swing**. Move the paddle to keep the ball in play, break bricks to earn points, and advance through increasingly challenging levels.
 
----
+## Features
 
-## 🧩 About the Project
+- Keyboard-controlled paddle and ball launch
+- Ball collisions with walls, the paddle, and bricks
+- Score tracking and three lives
+- Multiple levels with increasing ball speed
+- Game-over display
 
-In this game, a small ball bounces around the screen, breaking bricks on collision.  
-The player controls a paddle at the bottom to keep the ball from falling.  
-Each brick broken gives you points. The goal is to clear all bricks without losing the ball!
-
----
-
-## 🚀 Technologies Used
+## Technologies
 
 - Java
-- JFrame and JPanel (Java Swing)
+- Java Swing (`JFrame`, `JPanel`, `Timer`)
 - Java 2D Graphics
-- Basic Game Loop with Timer
-- Keyboard Input Handling
+- Keyboard event handling
 
----
+## Run the game
 
+**Requirements:** A Java Development Kit (JDK) and a Java IDE. For VS Code, install the **Extension Pack for Java**.
 
-## 🎯 How to Play
+1. Clone the repository:
 
-- Press **Right Arrow** → Move paddle right
-- Press **Left Arrow** → Move paddle left
-- Press **Up Arrow** → To release the Ball
+   ```bash
+   git clone https://github.com/BeingBornn/Brick-Breaker-Game.git
+   ```
 
-**Game Over** if the ball falls below the paddle 3  times!
+2. In VS Code, open the inner **`BrickBreakerGame`** folder.
+3. Open **`src/view/GameView.java`**.
+4. Click **Run** above the `main` method.
 
----
+The entry point is `view.GameView`.
 
-## 📥 How to Run
+## Controls
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/BeingBornn/Brick-Breaker-Game.git
-    ```
+| Key | Action |
+| --- | --- |
+| Left arrow | Move paddle left |
+| Right arrow | Move paddle right |
+| Up arrow | Release the ball |
 
-2. Compile the Java files:
-    ```bash
-    javac BrickBreakerGame/*.java
-    ```
+The game ends when all three lives have been lost.
 
-3. Run the game:
-    ```bash
-    java BrickBreakerGame.Main
-    ```
+## Project structure
 
----
+The source code is organized into **model**, **view**, and **controller** packages to separate game objects, rendering, and game logic.
+
+```text
+BrickBreakerGame/
+└── src/
+    ├── model/
+    ├── view/
+    └── controller/
+```
+
+### Class responsibilities
+
+- **`view/GameView.java`** — Application entry point. Extends `JFrame`, configures the fixed-size game window (1024 × 768), creates the `GamePanel`, and makes the window visible.
