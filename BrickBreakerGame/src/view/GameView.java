@@ -6,6 +6,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+/**
+ * Creates and configures the main Brick Breaker game window.
+ * Initializes the game panel and starts the application.
+ */
 public class GameView extends JFrame{
 	
 	public static final int SCREEN_WIDTH = 1024; 
