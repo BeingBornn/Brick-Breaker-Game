@@ -1,9 +1,5 @@
 package view;
 
-import java.awt.Color;
-
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 public class GameView extends JFrame{
