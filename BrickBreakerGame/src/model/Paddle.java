@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Panel;
-
 import controller.GameController;
 import view.GamePanel;
 

@@ -11,7 +11,6 @@ import model.Ball;
 import model.Brick;
 import model.Paddle;
 import view.GamePanel;
-import view.GameView;
 
 public class GameController  {
 
