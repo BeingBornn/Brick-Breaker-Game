@@ -10,6 +10,12 @@ import java.awt.Graphics;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+/**
+* Initializes and renders the Brick Breaker game.
+* Creates the ball, paddle, and bricks, and connects
+* keyboard input with the game controller.
+* Displays game objects, score, lives, and levels.
+*/
 public class GamePanel extends JPanel {
 	
 	// Top HUD
@@ -49,12 +55,6 @@ public class GamePanel extends JPanel {
 	// GameController reference
 	private GameController gameController;
 
-	/**
-	* Initializes and renders the Brick Breaker game.
-	* Creates the ball, paddle, and bricks, and connects
-	* keyboard input with the game controller.
-	* Displays game objects, score, lives, and levels.
-	*/
 	public GamePanel() {
 		
 		// the panel design
