@@ -4,7 +4,7 @@ public class Ball {
 
 	//attributes
 	private double speedX, speedY;
-	private int x, y; 
+	private double x, y; 
 	public static final int BALL_SIZE = 25; // ball diameter
 	
 	//Constructor
@@ -16,8 +16,8 @@ public class Ball {
 	}
 	// method for movement by speed
 	public void move() {
-	    x += (int) speedX;
-	    y += (int) speedY;
+	    x += speedX;
+	    y += speedY;
 	}
 	
 	// methods for changing direction
@@ -38,7 +38,7 @@ public class Ball {
 	
 	//Getter and Setter
 	public int getX() {
-		return x;
+		return (int) Math.round(x);
 	}
 
 	public void setX(int x) {
@@ -46,7 +46,7 @@ public class Ball {
 	}
 
 	public int getY() {
-		return y;
+		return (int) Math.round(y);
 	}
 
 	public void setY(int y) {
