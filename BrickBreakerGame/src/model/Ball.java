@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Represents the ball in the game.
+ * Manages its position, velocity, movement, and direction changes.
+ * Preserves fractional positions for accurate movement and
+ * provides rounded coordinates for rendering.
+ */
 public class Ball {
 
 	//attributes
