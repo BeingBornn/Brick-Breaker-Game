@@ -7,9 +7,11 @@ import model.Paddle;
 
 public class InputHandler extends KeyAdapter {
 	private Paddle paddle;
-	
-	public InputHandler(Paddle paddle) {
+	private GameController controller;
+
+	public InputHandler(Paddle paddle, GameController controller) {
 		this.paddle = paddle;
+		this.controller = controller;
 	}
 	
 	@Override
@@ -23,7 +25,7 @@ public class InputHandler extends KeyAdapter {
 			paddle.moveRight();
 		}
 		if(key == KeyEvent.VK_UP) {
-			paddle.getController().releaseBall();
+			controller.releaseBall();
 		}
 	}
 	

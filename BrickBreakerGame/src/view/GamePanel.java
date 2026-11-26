@@ -65,8 +65,7 @@ public class GamePanel extends JPanel {
 		setFocusable(true);
 
 		//paddle object
-		paddle = new Paddle(PaddleCenterX, paddleSpeedX, paddleWidth, paddleHeight, this, null);
-		addKeyListener(new InputHandler(paddle)); //adding InputHandlers for paddle
+		paddle = new Paddle(PaddleCenterX, paddleSpeedX, paddleWidth, paddleHeight, this);
 		
 		//ball object
 		ballY = paddle.getY() - Ball.BALL_SIZE; // getting the default y for the ball at the start of the game
@@ -83,7 +82,9 @@ public class GamePanel extends JPanel {
 		
 		// Game Controller
 		gameController = new GameController(ball, this, paddle); // this = the current object that I'm inside
-		paddle.setController(gameController);
+
+		// Register keyboard listener
+		addKeyListener(new InputHandler(paddle, gameController));
 	}
 	
 	@Override

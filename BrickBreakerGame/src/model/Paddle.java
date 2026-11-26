@@ -1,6 +1,5 @@
 package model;
 
-import controller.GameController;
 import view.GamePanel;
 
 public class Paddle {
@@ -10,16 +9,14 @@ public class Paddle {
 	private final int y = 680;
 	private int x, speedX, width, height;
 	GamePanel panel;
-	private GameController controller;
 
 	//Constructor
-	public Paddle(int x, int speedX, int width, int height, GamePanel panel, GameController controller) {
+	public Paddle(int x, int speedX, int width, int height, GamePanel panel) {
 		this.x = x;
 		this.speedX = 0;
 		this.width = width;
 		this.height = height;
 		this.panel = panel;
-		this.controller = controller;
 	}
 
 	//method for paddle movement
@@ -52,15 +49,6 @@ public class Paddle {
 	// method for reseting the speed
 	public void resetSpeed() {
 		this.speedX = baseSpeed;
-	}
-	
-	// getters and setters
-	public GameController getController() {
-	    return controller;
-	}
-	
-	public void setController(GameController controller) {
-	    this.controller = controller;
 	}
 	
 	public int getX() {
