@@ -60,3 +60,4 @@ BrickBreakerGame/
 - **`view/GameView.java`** — Application entry point. Extends `JFrame`, configures the fixed-size game window (1024 × 768), creates the `GamePanel`, and makes the window visible.
 - **`view/GamePanel.java`** — Initializes the game objects, handles rendering, and connects keyboard input and game controllers.
 - **`model/Ball.java`** — Represents the game ball, manages its position and velocity, and provides methods for movement, direction reversal, and position resetting.
+- **`model/Paddle.java`** — Represents the player-controlled paddle, manages horizontal movement and speed, and keeps the paddle within the game boundaries.
