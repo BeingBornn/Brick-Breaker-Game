@@ -115,7 +115,15 @@ public class GameController  {
 	public void loseLife() {
 		lives--;
 		if(lives > 0) {
-			// Reset ball position
+			// Center the paddle
+    		paddle.setX(
+        		(panel.getWidth() - paddle.getWidth()) / 2
+    		);
+
+			// Stop its movement
+  			paddle.stop();
+
+			// Reset the ball
 			ball.reset(panel.getWidth(), panel.getHeight());
 			ballAttachedToPaddle = true;
 		} else {
