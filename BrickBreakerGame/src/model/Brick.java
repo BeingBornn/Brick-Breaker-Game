@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Represents an individual brick in the game.
+ * Stores its position, dimensions, score value,
+ * and whether it has been destroyed.
+ */
 public class Brick {
 	private int x;
 	private int y;
