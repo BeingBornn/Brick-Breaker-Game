@@ -2,6 +2,12 @@ package model;
 
 import view.GamePanel;
 
+/**
+ * Represents the player-controlled paddle.
+ * Manages horizontal movement, speed, and position.
+ * Keeps the paddle within the game panel boundaries.
+ * (the paddle cannot move outside the game window)
+ */
 public class Paddle {
 
 	//attributes
