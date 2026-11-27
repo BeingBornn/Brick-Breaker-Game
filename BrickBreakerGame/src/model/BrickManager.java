@@ -1,10 +1,14 @@
 package model;
 
+/**
+ * Creates and manages the grid of bricks in the game.
+ * Calculates each brick's position and score based on
+ * its row, column, dimensions, and spacing.
+ */
 public class BrickManager {
 
 	// Bricks grid
 	private Brick[][] bricks;
-
 
 	// where the drawing starts
 	private int startX;
