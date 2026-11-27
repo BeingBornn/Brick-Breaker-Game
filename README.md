@@ -62,3 +62,4 @@ BrickBreakerGame/
 - **`model/Ball.java`** — Represents the game ball, manages its position and velocity, and provides methods for movement, direction reversal, and position resetting.
 - **`model/Paddle.java`** — Represents the player-controlled paddle, manages horizontal movement and speed, and keeps the paddle within the game boundaries.
 - **`model/Brick.java`** — Represents an individual brick, storing its position, dimensions, score value, and whether it still exists.
+- **`model/BrickManager.java`** — Creates and manages the brick grid, calculating each brick's position and score based on its row and column.
