@@ -12,7 +12,7 @@ public class InputHandler extends KeyAdapter {
 	// tracking paddle holding
 	private boolean leftHeld = false;
 	private boolean rightHeld = false;
-	private int lastDirection = 0;
+	private int lastDirection = 0; // most recently pressed direction: -1 left, 1 right, 0 initially
 
 	public InputHandler(Paddle paddle, GameController controller) {
 		this.paddle = paddle;
