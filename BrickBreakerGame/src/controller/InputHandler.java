@@ -5,6 +5,11 @@ import java.awt.event.KeyEvent;
 
 import model.Paddle;
 
+/**
+ * Handles keyboard input for paddle movement and ball release.
+ * Tracks held direction keys to determine paddle movement
+ * and communicates with the game controller to release the ball.
+ */
 public class InputHandler extends KeyAdapter {
 	private Paddle paddle;
 	private GameController controller;
