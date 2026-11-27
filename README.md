@@ -63,3 +63,4 @@ BrickBreakerGame/
 - **`model/Paddle.java`** — Represents the player-controlled paddle, manages horizontal movement and speed, and keeps the paddle within the game boundaries.
 - **`model/Brick.java`** — Represents an individual brick, storing its position, dimensions, score value, and whether it still exists.
 - **`model/BrickManager.java`** — Creates and manages the brick grid, calculating each brick's position and score based on its row and column.
+- **`controller/InputHandler.java`** — Handles keyboard input for paddle movement and ball release, tracking held arrow keys to manage direction changes smoothly.
